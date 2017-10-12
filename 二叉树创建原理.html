@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--节点组成，节点的值，左右箭头（相互关系），孩子节点（左孩子，右孩子），当两个节点拥有同一个父亲节点的时候，称为兄弟节点，叶子节点（末尾），最高节点称为根节点-->
+<!--层次，层次数称为二叉树的高-->
+<!--排序二叉树的特点：左孩子的值<父亲节点<右孩子,-->
+<script>
+    function binaryTree() {
+        var Node = function (key) {
+            this.key = key;
+            this.left = null;//左箭头
+            this.right = null;//右箭头
+        }
+//        父节点
+        var root = null;
+        var insertNode = function (node, newNode) {
+//            如果新节点的值小于当前节点，那么放到左边，判断左孩子是否有值，若没有值，那么添加到左边
+            if (newNode.key < node.key) {
+                if (node.left === null) {
+                    node.left = newNode;
+                } else {
+                    insertNode(node.left, newNode)
+                }
+            } else {
+                if (node.right === null) {
+                    node.right = newNode;
+                } else {
+                    insertNode(node.right, newNode);
+                }
+            }
+        }
+//        插入节点
+        this.insert = function (key) {
+//            创建一个节点对象
+            var newNode = new Node(key);
+            if (root === null) {
+                root = newNode;
+            } else {
+                insertNode(root, newNode);
+            }
+        }
+    }
+    var a = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+    var binaryTree = new binaryTree();
+    a.forEach(function (key) {
+        binaryTree.insert(key);
+    })
+</script>
+</body>
+</html>
