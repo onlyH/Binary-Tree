@@ -1,6 +1,8 @@
 # Binary-Tree
 javascript二叉树算法
 
+![](https://github.com/onlyH/Binary-Tree/blob/master/%E4%BA%8C%E5%8F%89%E6%A0%91.png)
+
 #### 节点组成，节点的值，左右箭头（相互关系），孩子节点（左孩子，右孩子），当两个节点拥有同一个父亲节点的时候，称为兄弟节点，叶子节点（末尾），最高节点称为根节点
 
 #### 层次，层次数称为二叉树的高
